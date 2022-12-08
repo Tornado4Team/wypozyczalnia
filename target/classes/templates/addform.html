@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Dodawanie osoby do bazy</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+
+    <h2> Dodawanie osoby do bazy:</h2>
+
+    <form method="POST" th:object="${transData}">
+
+        <label> Wybierz walute: </label>
+
+        <div class="form-group" th:each="locOperator: ${transData.operatorNames}">
+            <input type="radio"
+                   th:field="*{operator}"
+                   th:value="${locOperator}" />
+
+            <label
+                    th:for="${#ids.prev('operator')}"
+                    th:text="${locOperator}">
+            </label>
+        </div>
+
+        <br/>
+        
+        <div class="form-group">    
+            <label> Kwota wejściowa: </label>:
+            <input type="text" th:field="${transData.valueIN}" value=""/><br/>
+        </div>       
+
+        <br/>
+
+        <label> Wymienić na PLN?: </label>
+
+        <div class="form-group" th:each="locWymiana: ${transData.wymianaNames}">
+            <input type="radio"
+                   th:field="*{wymiana}"
+                   th:value="${locWymiana}" />
+
+            <label
+                    th:for="${#ids.prev('wymiana')}"
+                    th:text="${locWymiana}">
+            </label>
+        </div>
+
+        <br/>
+
+
+
+        <input type="submit" value="Dodaj" />
+
+
+    </form>
+    
+    
+
+</body>
+</html>
+
