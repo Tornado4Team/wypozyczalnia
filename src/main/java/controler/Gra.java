@@ -21,7 +21,7 @@ public class Gra {
    private double koszt;
    private double kaucja;
    private double kara;
-   private int id_wydawcy;
+   String id_wydawcy;
    private String gatunki;
 
 
@@ -33,16 +33,16 @@ public class Gra {
        this.min_czas=0;
        this.max_czas=0;
        this.wiek=0;
+       this.koszt = 0.0;
        this.kaucja=0.0;
        this.kara=0.0;
-       this.id_wydawcy=0;
-       this.koszt = 0.0;
+       this.id_wydawcy="";
        this.gatunki="";
     }
 
 
 
-    public Gra(String gra, int min_graczy, int max_graczy, int min_czas, int max_czas, int wiek, double koszt, double kaucja, double kara, int wydawca,  String gatunki) {
+    public Gra(String gra, int min_graczy, int max_graczy, int min_czas, int max_czas, int wiek, double koszt, double kaucja, double kara, String wydawca,  String gatunki) {
         this.nazwa_gry = gra;
         this.min_graczy=min_graczy;
         this.max_graczy=max_graczy;
@@ -90,8 +90,8 @@ public class Gra {
     public double getKara() {        return kara;    }
     public void setKara(double kara) {        this.kara = kara;    }
 
-    public int getId_wydawcy() {        return id_wydawcy;    }
-    public void setId_wydawcy(int id_wydawcy) {        this.id_wydawcy = id_wydawcy;    }
+    public String getId_wydawcy() {        return id_wydawcy;    }
+    public void setId_wydawcy(String id_wydawcy) {        this.id_wydawcy = id_wydawcy;    }
 
     public String getGatunki() {        return gatunki;    }
     public void setGatunki(String gatunki) {        this.gatunki = gatunki;    }

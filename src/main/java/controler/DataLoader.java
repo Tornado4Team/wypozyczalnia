@@ -20,24 +20,38 @@ public class DataLoader implements ApplicationRunner {
 
 
     @Autowired
-    public DataLoader(GatunekRepository gatunekRepository) {this.gatunekRepository = gatunekRepository;}
-    @Autowired
-    public DataLoader(GraRepository graRepository) {this.graRepository = graRepository;}
-    @Autowired
-    public DataLoader(KlientRepository klientRepository) {this.klientRepository = klientRepository;}
-    @Autowired
-    public DataLoader(PracownikRepository pracownikRepository) {this.pracownikRepository = pracownikRepository;}
-    @Autowired
-    public DataLoader(WydarzenieRepository wydarzenieRepository) {this.wydarzenieRepository = wydarzenieRepository;}
-    @Autowired
-    public DataLoader(WydawcaRepository wydawcaRepository) {this.wydawcaRepository = wydawcaRepository;}
-    @Autowired
-    public DataLoader(WypozyczenieRepository wypozyczenieRepository) {this.wypozyczenieRepository = wypozyczenieRepository;}
-
+    public DataLoader(GatunekRepository gatunekRepository, GraRepository graRepository, KlientRepository klientRepository, PracownikRepository pracownikRepository,
+    WydarzenieRepository wydarzenieRepository, WydawcaRepository wydawcaRepository, WypozyczenieRepository wypozyczenieRepository) {
+        this.gatunekRepository = gatunekRepository;
+        this.graRepository = graRepository;
+        this.klientRepository = klientRepository;
+        this.pracownikRepository = pracownikRepository;
+        this.wydarzenieRepository = wydarzenieRepository;
+        this.wydawcaRepository = wydawcaRepository;
+        this.wypozyczenieRepository = wypozyczenieRepository;
+    }
 
     public void run(ApplicationArguments args) {
-        
+        //gatunki
+        gatunekRepository.save(new Gatunek("Familijna"));
+
+        //gry
+        graRepository.save(new Gra("Frogi",2,5,15,25,4,15.00,5.00,1.0,"Rebel","test"));
+
+        //klient
+        klientRepository.save(new Klient("Jan","Nowak","05.04.1997","543159764","jnowak@wp.pl","Krosno","Lwowska","24"));
+
+        //pracownik
+        pracownikRepository.save(new Pracownik("Tadeusz","Nowacki"));
+
+        //wydarzenia
+        wydarzenieRepository.save(new Wydarzenie("Lokal","0.0.0","Krosno","Lewakowskiego","18b"));
+
+        //wydawca
+        wydawcaRepository.save(new Wydawca("Rebel"));
+
+        //wypozyczenia
         wypozyczenieRepository.save(new Wypozyczenie("04.12.22","08.12.22",1,1,1,25.00));
-        graRepository.save(new Gra("Frogi",2,5,15,25,4,15.00,5.00,1,1,"test"));
-    }
+
+      }
 }

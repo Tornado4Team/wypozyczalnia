@@ -1,29 +1,73 @@
 <!DOCTYPE HTML>
 <html>
-<head> 
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+
     <title>Wypożyczalnia gier</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
 
-    <h2> Wybierz opcję bazy danych: </h2>
+    <h2> Wypożyczalnia gier: </h2>
 
-    <h3>
-    
-        <a href="/wypozycz">Dodawanie operacji </a> </br> </br>
-        
-        <a href="/print_all_wypozyczenia">Wypisywanie wszystkich wypożyczeń </a> </br> </br>
-        <a href="/print_all_gry">Wypisywanie wszystkich gier </a> </br> </br>
-        <a href="/print_all_klienci">Wypisywanie wszystkich klientów </a> </br> </br>
-        <a href="/print_all_pracownicy">Wypisywanie wszystkich pracowników </a> </br> </br>
-        <a href="/print_all_wydawcy">Wypisywanie wszystkich wydawców </a> </br> </br>
-        <a href="/print_all_wydarzenia">Wypisywanie wszystkich wydarzeń </a> </br> </br>
-        <a href="/print_all_gatunki">Wypisywanie wszystkich gatunków gier </a> </br> </br>
+        <div style="text-align:center;" class="container">
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <tbody>
+                    <tr>
+                        <td> <a href="/wypozycz">Wypożycz </a> </td>
+                        <td> <a href="/oddaj">Oddaj </a> </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        <hr>
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <tbody>
+                        <tr>
+                            <td colspan="2" > <a href="/print_all_wypozyczenia">Wypisywanie wszystkich wypożyczeń </a> </td>
+                        </tr>
+                        <tr>
+                            <td><a href="/print_all_gry">Wypisywanie wszystkich gier </a></td>
+                            <td><a href="/print_all_klienci">Wypisywanie wszystkich klientów </a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="/print_all_pracownicy">Wypisywanie wszystkich pracowników </a></td>
+                            <td><a href="/print_all_wydawcy">Wypisywanie wszystkich wydawców </a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="/print_all_wydarzenia">Wypisywanie wszystkich wydarzeń </a></td>
+                            <td><a href="/print_all_gatunki">Wypisywanie wszystkich gatunków gier </a></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
 
 
-    </h3>
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <tbody>
+                    <tr>
+                        <td><a href="/dodajgre">Dodaj grę</a></td>
+                        <td><a href="/dodajklienta">Dodaj klienta</a> </td>
+                    </tr>
+                    <tr>
+                        <td><a href="/dodajwydawce">Dodaj wydawcę</a> </td>
+                        <td><a href="/dodajpracownika">Dodaj pracownika</a> </td>
+                    </tr>
+                    <tr>
+                        <td><a href="/dodajgatunek">Dodaj gatunek gry</a> </td>
+                        <td><a href="/dodajwydarzenie">Dodaj wydarzenie</a> </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
 
+            <a href="/index.html">Wyloguj </a>
 
+        </div>
 
 </body>
 </html>

@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <title>Dodawanie osoby do bazy</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+
+    <h2> Dodawanie osoby do bazy:</h2>
+
+    <form method="POST" th:object="${gra}">
+
+        <br/>
+        <div style="text-align:center;" class="container">
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <tbody>
+                    <tr style="background-color:black;"><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr>
+                        <td colspan="2"><label> Nazwa gry: </label></td>
+                        <td colspan="6"><input type="text" th:field="${gra.nazwa_gry}" value=""/></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><label> Ilość graczy: </label></td>
+                        <td colspan="3"><input type="text" th:field="${gra.min_graczy}" value=""/></td>
+                        <td colspan="3"><input type="text" th:field="${gra.max_graczy}" value=""/></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><label> Czas gry: </label></td>
+                        <td colspan="3"><input type="text" th:field="${gra.min_czas}" value=""/></td>
+                        <td colspan="3"><input type="text" th:field="${gra.max_czas}" value=""/></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><label> Wiek: </label></td>
+                        <td colspan="6"><input type="text" th:field="${gra.wiek}" value=""/></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><label> Opłaty (koszt, kaucja, kara): </label></td>
+                        <td colspan="2"><input type="text" th:field="${gra.koszt}" value=""/></td>
+                        <td colspan="2"><input type="text" th:field="${gra.kaucja}" value=""/></td>
+                        <td colspan="2"><input type="text" th:field="${gra.kara}" value=""/></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><label> Wydawca: </label></td>
+                        <td colspan="6"><input type="text" th:field="${gra.id_wydawcy}" value=""/></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><label> Gatunki: </label></td>
+                        <td colspan="6"><input type="text" th:field="${gra.gatunki}" value=""/></td>
+                    </tr>
+
+                    <tr style="background-color:black;"><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <input type="submit" value="Dodaj" />
+        </div>
+    </form>
+    
+    
+
+</body>
+</html>
+

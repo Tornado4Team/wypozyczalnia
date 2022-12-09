@@ -21,24 +21,14 @@
                 <table class="table table-bordered">          
                     <thead>
                         <tr  class="active">
-                            <th>Data wypożyczenia</th>
-                            <th>Data oddania</th>
-                            <th>Gra</th>
-                            <th>Klient</th>
-                            <th>Pracownik</th>
-                            <th>Koszt</th>
+                            <th>Nazwa gatunku</th>
                         </tr>
                         
                     </thead>
                     <tbody>
-                    <tr th:each ="wypozyczenie : ${wypozyczenieList}">
+                    <tr th:each ="gatunek : ${gatunekList}">
 
-                        <td> <b  th:utext="${wypozyczenie.data_wypozyczenia}">...</b> </td>
-                        <td> <b  th:utext="${wypozyczenie.data_oddania}">...</b> </td>
-                        <td> <b  th:utext="${wypozyczenie.id_gry}">...</b> </td>
-                        <td> <b  th:utext="${wypozyczenie.id_klienta}">...</b> </td>
-                        <td> <b  th:utext="${wypozyczenie.id_pracownika}">...</b> </td>
-                        <td> <b  th:utext="${wypozyczenie.koszt}">...</b> </td>
+                        <td> <b  th:utext="${gatunek.nazwa_gatunku}">...</b> </td>
 
                     </tr>
                     </tbody>          
