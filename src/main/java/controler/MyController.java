@@ -14,6 +14,18 @@ public class MyController {
 
     @Autowired
     WypozyczenieRepository wypozyczenieRepository;
+    @Autowired
+    GraRepository graRepository;
+    @Autowired
+    KlientRepository klientRepository;
+    @Autowired
+    PracownikRepository pracownikRepository;
+    @Autowired
+    WydawcaRepository wydawcaRepository;
+    @Autowired
+    WydarzenieRepository wydarzenieRepository;
+    @Autowired
+    GatunekRepository gatunekRepository;
 
     
     @RequestMapping("/wypozycz")
@@ -36,18 +48,96 @@ public class MyController {
 
     //-------------------------------------------------------------------
         
-    @RequestMapping(value = "/print_all", method = RequestMethod.GET)
-    public String printAll(Model model)
+    @RequestMapping(value = "/print_all_wypozyczenia", method = RequestMethod.GET)
+    public String printAll_wypozyczenia(Model model)
     {
         List<Wypozyczenie> wypozyczenieList =  wypozyczenieRepository.findAll();
                         
         model.addAttribute("header","Lista wszystkich operacji"); //Dodanie obiektu do pamieci lokalnej modelu
         model.addAttribute("wypozyczenieList",wypozyczenieList); //Dodanie obiektu do pamieci lokalnej modelu
         
-        return "printform"; //Przekierowanie na strone 
+        return "printform_wypozyczenia"; //Przekierowanie na strone
 
     }
-    //-------------------------------------------------------------------    
+    //-------------------------------------------------------------------
+
+    @RequestMapping(value = "/print_all_gry", method = RequestMethod.GET)
+    public String printAll_gry(Model model)
+    {
+        List<Gra> graList =  graRepository.findAll();
+
+        model.addAttribute("header","Lista wszystkich operacji"); //Dodanie obiektu do pamieci lokalnej modelu
+        model.addAttribute("graList",graList); //Dodanie obiektu do pamieci lokalnej modelu
+
+        return "printform_gry"; //Przekierowanie na strone
+
+    }
+    //-------------------------------------------------------------------
+
+    @RequestMapping(value = "/print_all_klienci", method = RequestMethod.GET)
+    public String printAll_klienci(Model model)
+    {
+        List<Klient> klientList =  klientRepository.findAll();
+
+        model.addAttribute("header","Lista wszystkich operacji"); //Dodanie obiektu do pamieci lokalnej modelu
+        model.addAttribute("klientList",klientList); //Dodanie obiektu do pamieci lokalnej modelu
+
+        return "printform_klienci"; //Przekierowanie na strone
+
+    }
+    //-------------------------------------------------------------------
+
+    @RequestMapping(value = "/print_all_pracownicy", method = RequestMethod.GET)
+    public String printAll_pracownicy(Model model)
+    {
+        List<Pracownik> pracownikList =  pracownikRepository.findAll();
+
+        model.addAttribute("header","Lista wszystkich operacji"); //Dodanie obiektu do pamieci lokalnej modelu
+        model.addAttribute("pracownikList",pracownikList); //Dodanie obiektu do pamieci lokalnej modelu
+
+        return "printform_pracownicy"; //Przekierowanie na strone
+
+    }
+    //-------------------------------------------------------------------
+
+    @RequestMapping(value = "/print_all_wydawcy", method = RequestMethod.GET)
+    public String printAll_wydawcy(Model model)
+    {
+        List<Wydawca> wydawcaList =  wydawcaRepository.findAll();
+
+        model.addAttribute("header","Lista wszystkich operacji"); //Dodanie obiektu do pamieci lokalnej modelu
+        model.addAttribute("wydawcaList",wydawcaList); //Dodanie obiektu do pamieci lokalnej modelu
+
+        return "printform_wydawcy"; //Przekierowanie na strone
+
+    }
+    //-------------------------------------------------------------------
+
+    @RequestMapping(value = "/print_all_wydarzenia", method = RequestMethod.GET)
+    public String printAll_wydarzenia(Model model)
+    {
+        List<Wydarzenie> wydarzenieList =  wydarzenieRepository.findAll();
+
+        model.addAttribute("header","Lista wszystkich operacji"); //Dodanie obiektu do pamieci lokalnej modelu
+        model.addAttribute("wydarzenieList",wydarzenieList); //Dodanie obiektu do pamieci lokalnej modelu
+
+        return "printform_wydarzenia"; //Przekierowanie na strone
+
+    }
+    //-------------------------------------------------------------------
+
+    @RequestMapping(value = "/print_all_gatunki", method = RequestMethod.GET)
+    public String printAll_gatunki(Model model)
+    {
+        List<Gatunek> gatunekList =  gatunekRepository.findAll();
+
+        model.addAttribute("header","Lista wszystkich operacji"); //Dodanie obiektu do pamieci lokalnej modelu
+        model.addAttribute("gatunekList",gatunekList); //Dodanie obiektu do pamieci lokalnej modelu
+
+        return "printform_gatunki"; //Przekierowanie na strone
+
+    }
+    //-------------------------------------------------------------------
     
     //Obsluga bledow
 

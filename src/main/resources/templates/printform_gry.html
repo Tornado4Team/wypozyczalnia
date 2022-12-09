@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" >    
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />        
+        <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>        
+        <title>Lista transakcji</title>
+    </head>
+    
+    <body>
+        
+        
+        <div class="container">                
+            <h4>   <strong th:text="${header}"/>  </h4>      
+                        
+        </div>
+           
+
+        <div class="container">
+            <div class="table-responsive">
+                <table class="table table-bordered">          
+                    <thead>
+                        <tr  class="active">
+                            <th>Nazwa gry</th>
+                            <th>Ilość graczy</th>
+                            <th>Czas</th>
+                            <th>Wiek</th>
+                            <th>Koszt</th>
+                            <th>Kaucja</th>
+                            <th>Kara</th>
+                            <th>Wydawca</th>
+                            <th>Gatunki</th>
+                        </tr>
+                        
+                    </thead>
+                    <tbody>
+                    <tr th:each ="gra : ${graList}">
+
+                        <td> <b  th:utext="${gra.nazwa_gry}">...</b> </td>
+                        <td> <b  th:utext="${gra.min_graczy}+'-'+${gra.max_graczy}">...-...</b> </td>
+                        <td> <b  th:utext="${gra.min_czas}+'-'+${gra.max_czas}">...-...</b> </td>
+                        <td> <b  th:utext="'+'+${gra.wiek}">+...</b> </td>
+                        <td> <b  th:utext="${gra.koszt}">...</b> </td>
+                        <td> <b  th:utext="${gra.kaucja}">...</b> </td>
+                        <td> <b  th:utext="${gra.kara}">...</b> </td>
+                        <td> <b  th:utext="${gra.id_wydawcy}">...</b> </td>
+                        <td> <b  th:utext="${gra.gatunek}">...</b> </td>
+
+                    </tr>
+                    </tbody>          
+                </table>    
+            </div>
+            
+            <a href="/index.html">Strona główna </a> 
+            
+        </div>
+
+
+    </body>
+</html>
+
